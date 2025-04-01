@@ -6,7 +6,22 @@ https://github.com/sohosai/jsys24-hackathon-sample
 
 ## セットアップ
 
-1. 以下のコマンドで`yarn`をインストールする。
+0. `astro.config.mjs`の`base`のレポジトリ名をフォーク先のレポジトリ名に変更する
+
+```
+import { defineConfig } from "astro/config";
+
+import react from "@astrojs/react";
+
+// https://astro.build/config
+export default defineConfig({
+  site: "https://sohosai.github.io",
+  base: "jsys24-hackathon", //<- ここのレポジトリ名を変更する
+  integrations: [react()],
+});
+```
+
+2. 以下のコマンドで`yarn`をインストールする。
 
 ```shell
 npm install -g yarn
