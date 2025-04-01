@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+//班の名前を書いてください
+const groupName = "2班";
+// 呼んでほしい名前を書いてください。
+const members: string[] = ["masebb", "nodoka", "ya-", "member4", "member5"];
+---
+
+<Layout title="jsys24-hackathon">
+  <h1>jsys24-hackathon</h1>
+  <h2>{groupName}</h2>
+  <ul>
+    {
+      members.map((member) => (
+        <li>
+          <a href={"./" + member + "/"}>
+            <div class="item-box">{member}</div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
+
+<style>
+  h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+  ul {
+    width: 200px;
+    margin: auto;
+  }
+  li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  .item-box {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    text-align: center;
+    color: black;
+    box-shadow: 0px 5px 15px 0px rgba(81, 81, 81, 0.35);
+  }
+  .item-box:hover {
+    box-shadow: 0px 5px 15px 0px rgba(151, 151, 151, 0.35);
+  }
+</style>

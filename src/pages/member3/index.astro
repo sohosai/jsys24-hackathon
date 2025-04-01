@@ -1,0 +1,86 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const posts = await Astro.glob("./*md");
+---
+
+<Layout title="jsys24-hackathon">
+  <h1>jsys24-hackathon</h1>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={post.url}>
+            <div class="item-box">
+              {typeof post.frontmatter.title !== "undefined" ? (
+                <h2>{post.frontmatter.title}</h2>
+              ) : (
+                <h2>タイトルなし</h2>
+              )}
+              {typeof post.frontmatter.author !== "undefined" ? (
+                <p class="author">著者: {post.frontmatter.author}</p>
+              ) : (
+                <p class="author" />
+              )}
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <a href="../">
+    <div class="back-box">戻る</div>
+  </a>
+</Layout>
+<style>
+  h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+  ul {
+    width: 300px;
+    margin: auto;
+  }
+  li {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  .item-box {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    box-shadow: 0px 5px 15px 0px rgba(81, 81, 81, 0.35);
+    & h2 {
+      font-size: 20px;
+      color: black;
+    }
+    & .author {
+      margin-top: 10px;
+      font-size: 18;
+      color: gray;
+    }
+  }
+  .item-box:hover {
+    box-shadow: 0px 5px 15px 0px rgba(151, 151, 151, 0.35);
+  }
+  .back-box {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    box-shadow: 0px 5px 15px 0px rgba(81, 81, 81, 0.35);
+    width: 45px;
+    margin: auto;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+  }
+  .back-box:hover {
+    box-shadow: 0px 5px 15px 0px rgba(151, 151, 151, 0.35);
+  }
+</style>
