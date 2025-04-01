@@ -8,7 +8,7 @@ https://github.com/sohosai/jsys24-hackathon-sample
 
 0. `astro.config.mjs`の`base`のレポジトリ名をフォーク先のレポジトリ名に変更する
 
-``js
+```js
 import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
