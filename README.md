@@ -1,5 +1,9 @@
 # jsys24-hackathon
 
+## サンプルレポジトリ
+
+https://github.com/sohosai/jsys24-hackathon-sample
+
 ## セットアップ
 
 1. 以下のコマンドで`yarn`をインストールする。
